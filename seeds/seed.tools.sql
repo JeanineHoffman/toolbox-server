@@ -12,7 +12,7 @@ INSERT INTO tools (name, category, desc,img)
 ('Engineer hammer', 'hammers','steel double sided hammer',<img src='src/imgs/engineer-hammer.jpg' alt='steel double faced engineer hammer with yellow fiberglass handle'>),
 ('blacksmith steel hammer', 'hammers','64 oz. steel blacksmith hammer',<img src='src/imgs/steel-blacksmith-hammer.jpg' alt='steelblacksmithing hammer with one head blunt the other comes to a point'>),
 ('Bricklayer hammer', 'hammers','Smooth-faced double-tempered head and decreased shock with nylon wrapped handle',<img src='src/imgs/bricklayers-hammer.jpg' alt='flat faced, hammer, in blue with shock reducing wrapped handle'>),
-('Demolition hammer', 'hammers','enlarged claw, 22 oz. steel head 9.25in handle',<img src='src/imgs/demolition-hammer.jpg' alt='demolition hammer, with hellow handle, enlarged claw'>),
+('Demolition hammer', 'hammers','enlarged claw, 22 oz. steel head 9.25in handle',<img src='src/imgs/demolition-hammer.jpg' alt='demolition hammer, with hollow handle, enlarged claw'>),
 ('tack hammer', 'hammers','magnetic, hickory handle, small double headed mallet',<img src='src/imgs/tack-hammer.jpg' alt='hickory wood handle, small, double headed mallet for tacks'>),
 ('Tinners hammer', 'hammers','one piece construction to set rivets,  hammer',<img src='src/imgs/Tinners-hammer.jpg' alt='one piece, polished steel hammer for setting rivets'>),
 ('Fence Post Pounder hammer', 'hammers','27 lb. fence post hammer',<img src='src/imgs/post-pounder-hammer.jpg' alt='Post punder hammer, with two long handles and can be used by two people'>),
@@ -60,7 +60,7 @@ INSERT INTO tools (name, category, desc,img)
 ('cultivator, gas-powered, 10 inch', 'cultivators','10 in. 43cc Gas 2-Cycle Cultivato, tines for tilling and 2 wheels for easy maneuverability',<img src='src/imgs/cultivator-gas-10inch.jpg' alt='cultivator with black handles and red protective casing'>),
 ('cultivator, gas-powered, 12 inch', 'cultivators','12 in. 29cc 4-Cycle Gas Cultivator, 5 in. of tilling depth and choose 6 in, or 12 in tilling widths',<img src='src/imgs/cultivator-gas-12inch.jpg' alt='cultivator with black handles and yellow protective casing'>),
 ('plate compactor', 'plate compactors','6 HP Kohler Vibratory Plate Compactor for Soil Compaction, Compaction depth of 3,000 lbs./ft.,21 in. x 17 in. steel base plate ',<img src='src/imgs/power-plate-compactor-6hp.jpg' alt='large plate compacter, black, with wheel kit'>) 
-('plate compactor 6.5hp, gas', 'plate compactors','6.5 HP 4-Cycle Gas Jumping Jack Tamping Rammer Vibratory Asphalt/Soil Plate Compactor, Multi-functional usage for installations and asphalting projects',<img src='src/imgs/stark-plate-compactors.jpg' alt='plate compacto, yellow and black, for soil and asphalt'>), 
+('plate compactor 6.5hp, gas', 'plate compactors','6.5 HP 4-Cycle Gas Jumping Jack Tamping Rammer Vibratory Asphalt/Soil Plate Compactor, Multi-functional usage for installations and asphalting projects',<img src='src/imgs/8stark-plate-compactors.jpg' alt='plate compacto, yellow and black, for soil and asphalt'>), 
 ('post hole digger, manual', 'post hole digger','48 in. Fiberglass Handle Post Hole Digger, High carbon steel blades with beveled edges,Strong fiberglass handles with cushion grips',<img src='src/imgs/post-hole-digger-manual.jpg' alt='manual post hold digger with red hand grips'>),
 ('post hole digger, gas powered', 'post hole digger','55CC 1-Man Post Hole Digger with 10 in. bit',<img src='src/imgs/auger-gas-powered.jpg' alt='gas powered auger for digging holes with red handles'>);
 
