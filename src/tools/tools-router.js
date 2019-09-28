@@ -1,7 +1,7 @@
 const express = require('express');
 const xss = require('xss');
 const ToolsRouter = express.Router();
-const ToolsService = require('./tools.service')
+const ToolsService = require('../tools/tools-service')
 
 const serializeTool = tool => ({
   id: tool.id,
@@ -9,6 +9,7 @@ const serializeTool = tool => ({
   tool_category: tool.tool_category,
   tool_desc: xss(tool.tool_desc),
   tool_img_filename: tool.tool_img_filename,
+  tool_img_alt: tool.tool_img_alt,
 })
 
 // GET request for all tools
