@@ -4,8 +4,8 @@ TRUNCATE TABLE
   tools
   RESTART IDENTITY CASCADE;
 
-INSERT INTO tools (name, category, desc,img)
-('claw hammer', 'hammers', 'fiberglass claw hammer', <img src='src/imgs/husky-claw-hammers.jpg' alt='claw hammer with fiberglass handle'> ),
+INSERT INTO tools (tool_name, tool_category, tool_desc ,tool_img_filename, tool_img_alt)
+('claw hammer', 'hammers', 'fiberglass claw hammer', 'husky-claw-hammers.jpg', 'claw hammer with fiberglass handle'),
 ('framing hammer-checkered face', 'hammers','steel checkered-face hammer',<img src='src/imgs/steel-checkered-face-hammer.jpg' alt='steel-checkered-face framing hammer'>),
 ('framing hammer-milled face', 'hammers','steel hammer, shock reduction, milled face',<img src='src/imgs/milled-face-framing-hammer.jpg' alt='steel-milled-face framing hammer'>),
 ('soft hammer, double faced', 'hammers','two sided hammer, one soft face, one hard faced with hickory handle',<img src='src/imgs/-soft-double-faced-hammer.jpg' alt='double headed hammer, one head red, one head yellow, with a hickory handle. can be  used for soft or hard needs'>),
