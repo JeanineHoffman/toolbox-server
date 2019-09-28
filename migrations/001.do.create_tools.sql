@@ -3,7 +3,7 @@ CREATE TABLE tools (
   tool_name TEXT NOT NULL,
   tool_category TEXT NOT NULL,
   tool_desc TEXT NOT NULL,
-  tool_img_filename TEXT NOT NULL
+  tool_img_filename TEXT NOT NULL,
   tool_img_alt TEXT NOT NULL
 );
 
