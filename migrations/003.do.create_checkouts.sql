@@ -3,5 +3,5 @@ CREATE TABLE checkouts (
     REFERENCES tools(id) ON DELETE CASCADE NOT NULL,
   user_id INTEGER
     REFERENCES users(id) ON DELETE CASCADE NOT NULL,
-  return_date DATE DEFAULT CURRENT_DATE + integer '4';
+  return_date DATE DEFAULT CURRENT_DATE + integer '4'
 );
