@@ -1,4 +1,4 @@
 TRUNCATE
-  tool
+  tools
  
   RESTART IDENTITY CASCADE;
