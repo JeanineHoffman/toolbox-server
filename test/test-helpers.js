@@ -85,19 +85,20 @@ function seedUsers(db, users) {
     user_password: bcrypt.hashSync(user.user_password, 1)
   }))
   return db.into('users').insert(preppedUsers)
-    // .then(() => 
-    //   //update the auto sequence to stay in sync
-    //   db.raw(
-    //     `SELECT setval('id', ?)`,
-    //     [users[users.length-1].id],
-    //   )
-    // )
+}
+
+function seedToolsTables(db, tools) {
+  // use a transcation to group the queries and auto rollback on any failure
+  return db.transaction(async trx => {
+    await trx.into('tools').insert(tools)
+  })
 }
 
 function cleanTables(db) {
   return db.raw(
     `TRUNCATE
-      users
+      users,
+      tools
       RESTART IDENTITY CASCADE`
   )
 }
@@ -115,6 +116,7 @@ module.exports = {
   makeUsersArray,
   makeToolsArray,
   seedUsers,
+  seedToolsTables,
   cleanTables,
   makeAuthHeader,
 }

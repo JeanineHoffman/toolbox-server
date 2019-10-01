@@ -2,6 +2,7 @@ const express = require('express');
 const xss = require('xss');
 const ToolsRouter = express.Router();
 const ToolsService = require('../tools/tools-service')
+const { requireAuth } = require('../middleware/jwt-auth')
 
 const serializeTool = tool => ({
   id: tool.id,
