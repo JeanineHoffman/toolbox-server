@@ -11,7 +11,8 @@
     "predeploy": "npm audit",
     "deploy": "git push heroku master",
     "migrate": "postgrator --config src/postgrator-config.js",
-    "migrate-production": "postgrator --config src/postgrator-production-config.js"
+    "migrate-production": "postgrator --config src/postgrator-production-config.js",
+    "heroku-postbuild": "echo Skip build on Heroku"
   },
   "keywords": [],
   "author": "",
@@ -36,5 +37,6 @@
     "mocha": "^6.1.4",
     "nodemon": "^1.19.1",
     "supertest": "^4.0.2"
-  }
+  },
+  "heroku-run-build-script": true
 }
