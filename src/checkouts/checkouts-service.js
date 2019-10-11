@@ -4,8 +4,8 @@ const CheckoutsService = {
       .insert(checkoutsObj)
       .into('checkouts')
       .returning('*')
-      .then(([tool_id]) => {
-        return tool_id
+      .then(rows => {
+        return rows
       })
     },
   checkUserExists(db, id) {
