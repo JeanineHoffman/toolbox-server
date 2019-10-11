@@ -3,7 +3,7 @@ const CheckoutsService = {
     return db
       .insert(checkoutsObj)
       .into('checkouts')
-      .returning('*')
+      .returning(['tool_id', 'return_date'])
       .then(rows => {
         return rows
       })

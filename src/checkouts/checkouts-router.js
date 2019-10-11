@@ -9,15 +9,15 @@ checkoutsRouter
     const { myBasketArrOfObjs } = req.body;
     
     // check if the user exists in the database
-    // CheckoutsService.checkUserExists(
-    //   req.app.get('db'),
-    //   myBasketArrOfObjs[0].user_id
-    // )
-    //   .then(userExists => {
-    //     if(!userExists)
-    //       return res.status(400).json({ error: `User does not exist, please create an account.`})
+    CheckoutsService.checkUserExists(
+      req.app.get('db'),
+      req.body[0].user_id
+    )
+      .then(userExists => {
+        if(!userExists)
+          return res.status(400).json({ error: `User does not exist, please create an account.`})
       // insert tool_ids and user_ids into the checkouts table
-           CheckoutsService.checkoutTools(
+          return CheckoutsService.checkoutTools(
             req.app.get('db'),
             myBasketArrOfObjs
           )
@@ -28,8 +28,8 @@ checkoutsRouter
                 .location("http://localhost:3000/mytools")
                 .json(tool)
             }) 
-        // }
-      // )
+        }
+      )
       .catch(next);
   })
 
