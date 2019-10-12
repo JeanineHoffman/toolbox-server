@@ -6,12 +6,12 @@ const jsonBodyParser = express.json();
 
 checkoutsRouter
   .post('/', jsonBodyParser, (req, res, next) => {
-    const { myBasketArrOfObjs } = req.body;
-    console.log(myBasketArrOfObjs)
+    const myBasketArrOfObjs = req.body;
+
     // check if the user exists in the database
     CheckoutsService.checkUserExists(
       req.app.get('db'),
-      req.body[0].user_id
+      myBasketArrOfObjs[0].user_id
     )
       .then(userExists => {
         if(!userExists)
