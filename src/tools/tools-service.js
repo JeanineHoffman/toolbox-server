@@ -12,6 +12,7 @@ const ToolsService = {
       ])
       .from('tools')
       .leftJoin('checkouts', 'tools.id', '=', 'checkouts.tool_id')
+      .orderBy('tools.tool_name', 'desc')
   },
   getById(knex,id) {
     return knex
