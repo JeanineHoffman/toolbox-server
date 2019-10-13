@@ -23,10 +23,15 @@ checkoutsRouter
           )
       // return the checked out tools in an array
             .then(tool => {
+              const toolArray = [];
+              for(var i =0;i < tool.length; i++){
+                toolArray.push(tool[i].tool_id);
+              }
               res
                 .status(201)
-                .location("http://localhost:3000/mytools")
-                .json(tool)
+                // .location("http://localhost:3000/mytools")
+                .location(req.originalUrl)
+                .send(toolArray)
             }) 
         }
       )

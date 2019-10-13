@@ -3,7 +3,8 @@ const CheckoutsService = {
     return db
       .insert(checkoutsObj)
       .into('checkouts')
-      .returning(['tool_id', 'return_date'])
+      // .returning(['tool_id', 'return_date'])
+      .returning(['tool_id'])
       .then(rows => {
         return rows
       })
@@ -13,7 +14,7 @@ const CheckoutsService = {
       .from('users')
       .where('id', id)
       .first()
-  },
+  }
 }
 
 module.exports = CheckoutsService;

@@ -20,6 +20,12 @@ const ToolsService = {
     .where('id', id)
     .first()
   },
+  getUserTools(db, user_id){ 
+    return db
+    .select(['tool_id'])
+    .from('checkouts')
+    .where('user_id', user_id)
+  },
  }
  
  module.exports = ToolsService;
