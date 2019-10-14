@@ -12,7 +12,7 @@ describe('Users Endpoints', function() {
   before('make knex instance', () => {
     db = knex({
       client: 'pg',
-      connection: process.env.TEST_DB_URL,
+      connection: process.env.TEST_DATABASE_URL,
     })
     app.set('db', db)
   })
@@ -122,7 +122,7 @@ describe('Users Endpoints', function() {
           return supertest(app)
             .post('/api/users')
             .send(userPasswordNotComplex)
-            .expect(400, { error: `Password must contain 1 upper case, lower case, number and special character` })
+            .expect(400, { error: `Password must contain 1 uppercase letter, 1 lowercase letter, a number and a special character` })
         })
 
         it(`responds 400 'User name already taken' when user_name isn't unique`, () => {
