@@ -1,15 +1,18 @@
 const { expect } = require('chai');
 const knex = require('knex');
 const app = require('../src/app');
-const { makeToolsArray } = require('../test/tools.fixtures');
+const helpers = require('./test-helpers');
+const { makeToolsArray, makeToolsArrayWithJoin } = require('../test/tools.fixtures');
 
 describe('Tools Endpoints', function () {
   let db
 
+  const testUsers = helpers.makeUsersArray();
+
   before('make knex instance', () => {
     db = knex({
       client: 'pg',
-      connection: process.env.TEST_DB_URL,
+      connection: process.env.TEST_DATABASE_URL,
     });
     app.set('db', db)
   });
@@ -31,6 +34,7 @@ describe('Tools Endpoints', function () {
 
     context('Given there are tools in the database', () => {
       const testTools = makeToolsArray();
+      const testToolsWithJoin = makeToolsArrayWithJoin();
 
       beforeEach('insert tools', () => {
         return db
@@ -41,7 +45,7 @@ describe('Tools Endpoints', function () {
       it('responds with 200 and all of the tools', () => {
         return supertest(app)
           .get('/api/tools')
-          .expect(200, testTools)
+          .expect(200, testToolsWithJoin )
       })
     })
   });
@@ -52,6 +56,7 @@ describe('Tools Endpoints', function () {
         const toolId = 123456;
         return supertest(app)
           .get(`/api/tools/${toolId}`)
+          .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
           .expect(404, { error: { message: `Tool does not exist` } })
       })
     });
@@ -70,6 +75,7 @@ describe('Tools Endpoints', function () {
         const expectedTool= testTool[toolId - 1]
         return supertest(app)
           .get(`/api/tools/${toolId}`)
+          .set('Authorization', helpers.makeAuthHeader(testUsers[0]))
           .expect(200, expectedTool)
       });
     });

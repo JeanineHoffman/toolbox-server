@@ -28,6 +28,7 @@ ToolsRouter
   // GET request for one tool
 ToolsRouter
   .route('/:tool_id')
+  .all(requireAuth)
   .all((req, res, next) => {
     const { tool_id } = req.params
     ToolsService.getById(
