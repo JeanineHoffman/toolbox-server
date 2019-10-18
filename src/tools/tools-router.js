@@ -25,7 +25,7 @@ ToolsRouter
       .catch(next)
   })
 
-  // GET request for one tool
+// GET request for one tool
 ToolsRouter
   .route('/:tool_id')
   .all(requireAuth)
@@ -50,4 +50,19 @@ ToolsRouter
     res.json(serializeTool(res.tool))
   })
 
+// GET request for a user's checked out tools
+ToolsRouter
+  .route('/for_user/:user_id')
+  .all(requireAuth)
+  .all((req, res, next) => {
+    const { user_id } = req.params
+    ToolsService.getUserTools(
+      req.app.get('db'),
+      user_id
+    )
+      .then(userTools => {
+        res.json(userTools);
+      })
+      .catch(next)
+  })
 module.exports = ToolsRouter;
